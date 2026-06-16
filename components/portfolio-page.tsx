@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 import { Meteors } from "./meteors";
@@ -260,27 +261,6 @@ export function PortfolioPage() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   useEffect(() => {
-    const revealNodes = Array.from(
-      document.querySelectorAll<HTMLElement>("[data-reveal]")
-    );
-
-    const revealObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-            revealObserver.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.2, rootMargin: "0px 0px -8% 0px" }
-    );
-
-    revealNodes.forEach((node, index) => {
-      node.style.setProperty("--delay", `${index * 80}ms`);
-      revealObserver.observe(node);
-    });
-
     const sectionNodes = Array.from(
       document.querySelectorAll<HTMLElement>("section[id]")
     );
@@ -300,7 +280,6 @@ export function PortfolioPage() {
     sectionNodes.forEach((node) => sectionObserver.observe(node));
 
     return () => {
-      revealObserver.disconnect();
       sectionObserver.disconnect();
     };
   }, []);
@@ -403,8 +382,8 @@ export function PortfolioPage() {
       </header>
 
       <section className="hero section" id="about">
-        <div className="hero-shell magic-card magic-border-beam" data-reveal="">
-          <Meteors
+        <div className="hero-shell magic-card magic-border-beam">
+            <Meteors
             number={26}
             minDelay={0.4}
             maxDelay={2.8}
@@ -452,10 +431,13 @@ export function PortfolioPage() {
           <div className="hero-card magic-orbit-card">
             <div className="hero-pattern" />
             <div className="portrait-orb photo-frame">
-              <img
+              <Image
                 className="hero-photo"
-                src="/profile-placeholder.svg"
+                src="/portfolio_image.png"
                 alt="Alekhya Atyam profile portrait"
+                width={500}
+                height={500}
+                priority
               />
             </div>
             {/* <div className="hero-card-footer hero-card-footer-home">
@@ -498,7 +480,7 @@ export function PortfolioPage() {
           ))}
         </div> */}
 
-        <div className="skills-panel magic-card magic-border-beam" data-reveal="">
+        <div className="skills-panel magic-card magic-border-beam">
           <div className="skills-header">
             <h3 className="eyebrow">Skills</h3>
           </div>
@@ -550,7 +532,7 @@ export function PortfolioPage() {
           {/* <h2>Experience</h2> */}
         </div>
 
-        <div className="experience-timeline" data-reveal="">
+        <div className="experience-timeline">
           {experience.map((item) => (
             <article
               className="experience-card"
@@ -599,7 +581,7 @@ export function PortfolioPage() {
           <h3 className="eyebrow">Projects</h3>
         </div>
 
-        <div className="projects-grid" data-reveal="">
+        <div className="projects-grid">
           {projects.map((project) => (
             <button
               type="button"
@@ -630,7 +612,7 @@ export function PortfolioPage() {
           <h3 className="eyebrow">Education</h3>
         </div>
 
-        <div className="education-timeline" data-reveal="">
+        <div className="education-timeline">
           {education.map((item) => (
             <article
               className="education-card"
@@ -659,7 +641,7 @@ export function PortfolioPage() {
         </div>
       </section>
 
-      <section className="section contact-band" id="contact" data-reveal="">
+      <section className="section contact-band" id="contact">
         <div className="skills-header">
           <h3 className="eyebrow">CONTACT</h3>
           <p className="contact-intro">Let&apos;s connect!</p>
