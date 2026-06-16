@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Alekhya Atyam | Product Designer & Frontend Developer",
+  title: "Alekhya Atyam | Product Designer & Full Stack Developer",
   description:
     "A modern section-based portfolio built with Next.js, featuring clean motion, case studies, and contact details.",
 };
