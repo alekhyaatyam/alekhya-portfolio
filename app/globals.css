@@ -383,7 +383,7 @@ h3 {
 
 .hero-greeting {
   font-family: Arial, Helvetica, sans-serif;
-  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-size: clamp(1.5rem, 5vw, 3rem);
   font-weight: 700;
   color: var(--text);
   margin-bottom: 8px;
@@ -1613,6 +1613,10 @@ h3 {
     border-radius: 28px;
   }
 
+  .page-shell {
+    padding-top: 140px;
+  }
+
   .hero-shell,
   .section-grid,
   .project-card {
@@ -1650,6 +1654,7 @@ h3 {
 
   .hero-shell {
     min-height: auto;
+    overflow: visible;
   }
 
   .hero-card {
@@ -1709,7 +1714,7 @@ h3 {
 @media (max-width: 720px) {
   .page-shell {
     width: min(calc(100% - 20px), var(--max-width));
-    padding-top: 108px;
+    padding-top: 200px;
   }
 
   .topbar {
@@ -1909,5 +1914,16 @@ h3 {
 
   .skill-group h4 {
     font-size: 2.2rem;
+  }
+
+  .hero-role-animated {
+    min-width: auto;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+  .hero-role {
+    overflow-wrap: break-word;
+    word-break: break-word;
   }
 }
