@@ -13,6 +13,10 @@ type Project = {
   tech: string[];
   accent: string;
   codeUrl: string;
+  role: string;
+  previewLabel: string;
+  previewDetail: string;
+  highlights: string[];
 };
 
 type Experience = {
@@ -41,21 +45,16 @@ const navigation = [
   { label: "Experience", href: "#experience" },
   { label: "Projects", href: "#projects" },
   { label: "Education", href: "#education" },
-];
-
-const metrics = [
-  { value: "7+", label: "Years shaping digital products" },
-  { value: "24", label: "Launches across SaaS, retail, and AI" },
-  { value: "92%", label: "Average client retention rate" },
+  { label: "Contact", href: "#contact" },
 ];
 
 const capabilities = [
-  "Product Strategy",
-  "UI Systems",
-  "Interaction Design",
-  "Frontend Development",
-  "Creative Direction",
-  "Rapid Prototyping",
+  "Frontend systems",
+  "Backend features",
+  "Database work",
+  "Desktop apps",
+  "Performance",
+  "Delivery",
 ];
 
 type SkillItem = {
@@ -71,11 +70,11 @@ const skillGroups: { title: string; items: SkillItem[] }[] = [
       { name: "HTML", icon: "https://skillicons.dev/icons?i=html" },
       { name: "CSS", icon: "https://skillicons.dev/icons?i=css" },
       { name: "JavaScript", icon: "https://skillicons.dev/icons?i=js" },
+      { name: "TypeScript", icon: "https://skillicons.dev/icons?i=ts" },
       { name: "Next.js", icon: "https://skillicons.dev/icons?i=nextjs" },
       { name: "Tailwind CSS", icon: "https://skillicons.dev/icons?i=tailwind" },
       { name: "WPF (MVVM)", icon: "https://skillicons.dev/icons?i=dotnet" },
       { name: "SEO", icon: "https://skillicons.dev/icons?i=google" },
-      { name: "CMS", icon: "https://skillicons.dev/icons?i=google" },
     ],
   },
   {
@@ -88,7 +87,7 @@ const skillGroups: { title: string; items: SkillItem[] }[] = [
       { name: "PHP", icon: "https://skillicons.dev/icons?i=php" },
       { name: "Laravel", icon: "https://skillicons.dev/icons?i=laravel" },
       { name: "Node.js", icon: "https://skillicons.dev/icons?i=nodejs" },
-      { name: "Next.js API Routes", icon: "https://skillicons.dev/icons?i=nextjs" },
+      { name: "API Routes", icon: "https://skillicons.dev/icons?i=nextjs" },
     ],
   },
   {
@@ -101,7 +100,7 @@ const skillGroups: { title: string; items: SkillItem[] }[] = [
     ],
   },
   {
-    title: "Others",
+    title: "Tools",
     items: [
       { name: "Git", icon: "https://skillicons.dev/icons?i=git" },
       { name: "GitHub", icon: "https://skillicons.dev/icons?i=github" },
@@ -112,7 +111,7 @@ const skillGroups: { title: string; items: SkillItem[] }[] = [
       { name: "pnpm", icon: "https://skillicons.dev/icons?i=pnpm" },
       { name: "Vercel", icon: "https://skillicons.dev/icons?i=vercel" },
       { name: "Visual Studio", icon: "https://skillicons.dev/icons?i=visualstudio" },
-      { name: "Scrum", icon: "https://skillicons.dev/icons?i=google"},
+      { name: "Scrum", icon: "https://skillicons.dev/icons?i=google" },
       { name: "AWS Lightsail", icon: "https://skillicons.dev/icons?i=aws" },
       { name: "Composer", icon: "https://skillicons.dev/icons?i=composer" },
       { name: "Apache", icon: "https://skillicons.dev/icons?i=apache" },
@@ -121,64 +120,107 @@ const skillGroups: { title: string; items: SkillItem[] }[] = [
   },
 ];
 
-
 const projects: Project[] = [
   {
     title: "Payhub Portal",
-    period: "MAR 2026",
+    period: "Mar 2026",
     summary:
-      "A fully responsive web application featuring a unified navigation system, reusable UI components, and optimized layouts for both desktop and mobile devices.",
+      "A responsive portal with a unified navigation system, reusable UI components, and layouts tuned for desktop and mobile users.",
     description:
-      "Developed a responsive, component‑driven web application featuring a unified navigation system, reusable UI elements, and mobile‑optimized layouts, with a structured TypeScript/React architecture that centralizes pages, shared components, and global styling for consistent user experience across the site.",
+      "Built a component-driven web application with a clear information architecture, reusable interface patterns, and mobile-friendly layouts. The codebase keeps pages, shared components, and global styles organized so product updates stay consistent as the site grows.",
     tech: ["Next.js", "TypeScript", "HTML", "CSS", "JavaScript"],
     accent: "sun",
     codeUrl: "https://github.com/alekhyaatyam/Payhub-Portal",
+    role: "Frontend and UI architecture",
+    previewLabel: "Responsive portal",
+    previewDetail: "Reusable components and navigation for product delivery.",
+    highlights: [
+      "Centralized shared UI patterns for consistent pages.",
+      "Optimized the layout for both desktop and mobile screens.",
+      "Kept the structure easy to extend with TypeScript and React.",
+    ],
   },
   {
     title: "Task Manager Web App",
     period: "Sep 2025",
     summary:
-      "A simple and intuitive web-based task manager that lets users keep track of their daily tasks directly in the browser.",
+      "A simple browser-based task manager that lets users add, complete, and remove tasks without losing their list between sessions.",
     description:
-      "Created a lightweight task management application where users can add new tasks, mark them as completed, and remove them when no longer needed. The app stores all tasks locally, ensuring they remain available between sessions while keeping everything easy to use and accessible through a clean, minimal interface.",
+      "Created a lightweight task management app focused on speed and clarity. Users can manage tasks locally in the browser, keeping the experience reliable, quick to load, and easy to return to on any device.",
     tech: ["PHP", "Composer", "GitHub"],
     accent: "mint",
     codeUrl: "https://github.com/alekhyaatyam/PHP_web_server",
+    role: "Full stack exercise",
+    previewLabel: "Local task board",
+    previewDetail: "Minimal workflow for daily task tracking.",
+    highlights: [
+      "Stored task state locally so progress survives refreshes.",
+      "Kept the interaction model intentionally simple.",
+      "Focused on maintainability and quick browser usage.",
+    ],
   },
   {
     title: "Laravel CRUD App",
     period: "Apr 2026",
     summary:
-      "A structured Laravel web application built with a modern asset pipeline and organized project setup, providing a smooth foundation for developing and running the application locally.",
+      "A structured Laravel application with a modern asset pipeline and an organized project setup for local development.",
     description:
-      "Created a Laravel-based application with a clear project structure and streamlined build process for both development and production environments. The project uses separate workflows for backend logic and frontend assets, ensuring maintainability and scalability. It can run seamlessly through a local environment tool or be launched manually, offering flexibility for different development setups. The overall build process supports efficient iteration while keeping the application organized and easy to manage.",
+      "Built a Laravel-based application with separate backend and frontend workflows. The structure supports iterative development, maintainable asset handling, and a setup that can be run locally with minimal friction.",
     tech: ["Laravel", "HTML", "CSS", "Bootstrap", "DB Seeder", "MVC Architecture"],
     accent: "clay",
     codeUrl: "https://github.com/alekhyaatyam/Laravel_CRUD_API",
+    role: "Backend and app structure",
+    previewLabel: "CRUD foundation",
+    previewDetail: "Laravel workflow with clear separation of concerns.",
+    highlights: [
+      "Separated app logic from frontend asset flow.",
+      "Kept the build and run process easy to reproduce locally.",
+      "Structured the code to stay maintainable as features expand.",
+    ],
   },
   {
     title: "Next.js Frontend with Laravel Core",
     period: "May 2026",
     summary:
-      "A full‑stack web application built with a Next.js frontend and a Laravel backend, supported by a structured database and content management workflow to deliver a smooth, scalable development experience.",
+      "A full stack app with a Next.js frontend, a Laravel backend, and database tooling for a maintainable content workflow.",
     description:
-      "Developed a modern application that combines a dynamic Next.js interface with a robust Laravel backend, creating a clean separation between presentation and server logic. The project includes an organized database layer with migrations and a CMS‑driven structure, ensuring data is easy to manage, update, and extend. Designed with clarity and maintainability in mind, the system provides a predictable workflow for building features, managing content, and scaling the application as it grows.",
-    tech: ["Next.js", "Laravel", "HTML", "CSS", "JavaScript", "CMS", "Database Migrations", "PostgreSQL", "PgAdmin", "SEO"],
+      "Developed a modern application that pairs a dynamic Next.js interface with a Laravel backend. The system uses migrations and a CMS-friendly structure so content and data can be updated predictably as the product evolves.",
+    tech: [
+      "Next.js",
+      "Laravel",
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "CMS",
+      "Database Migrations",
+      "PostgreSQL",
+      "PgAdmin",
+      "SEO",
+    ],
     accent: "sun",
     codeUrl: "https://github.com/alekhyaatyam/next.js-laravel",
+    role: "Full stack architecture",
+    previewLabel: "Hybrid stack",
+    previewDetail: "Next.js presentation layer over Laravel core services.",
+    highlights: [
+      "Separated presentation and server logic cleanly.",
+      "Used migrations and database tools to support content management.",
+      "Kept the system ready for future product scaling.",
+    ],
   },
 ];
 
 const experience: Experience[] = [
   {
-    period: "April 2026 - Present",
+    period: "Apr 2026 - Present",
     role: "Web Developer",
     company: "Payraydoo",
     summary:
-      "Contributed to the development of the Payraydoo platform by creating new user-facing pages, improving backend functionality, and managing database updates. Worked across the full stack to deliver smooth integrations, enhance system performance, and ensure the platform aligned with updated design and business requirements.",
+      "Contributing to the Payraydoo platform by building new user-facing pages, improving backend functionality, and coordinating database updates.",
     details: [
-      "Partnered across frontend and backend work to support feature delivery and platform updates.",
-      "Improved performance, integrations, and database-related workflows while aligning implementation with product needs.",
+      "Partner with frontend and backend work to support feature delivery and platform updates.",
+      "Improve performance, integrations, and database-related workflows while matching product needs.",
+      "Translate changing requirements into clear implementation paths across the stack.",
     ],
     skills: [
       "Next.js",
@@ -196,39 +238,31 @@ const experience: Experience[] = [
     mark: "P",
   },
   {
-    period: "August 2022 - January 2026",
+    period: "Aug 2022 - Jan 2026",
     role: "Senior Software Developer",
     company: "Teradyne - Zebra with Multi-Project Contributions",
     summary:
-      "Senior Software Developer with experience across embedded systems, automation, semiconductor testing, print workflow solutions, and enterprise tooling. Delivered end-to-end features, optimized performance, automated deployments, and collaborated across global engineering teams.",
+      "Worked across embedded systems, automation, semiconductor testing, print workflow solutions, and enterprise tooling.",
     details: [
-      "Worked across multiple engineering initiatives spanning enterprise tools, automation, and system optimization.",
-      "Collaborated with distributed teams to deliver reliable features and improve developer and operational workflows.",
+      "Delivered features and performance improvements across multiple engineering initiatives.",
+      "Collaborated with distributed teams on reliable workflows, automation, and tooling.",
+      "Balanced product delivery with maintainable implementation patterns across systems.",
     ],
-    skills: [
-      "C++",
-      "SQL",
-      "WPF (MVVM)",
-      "JIRA",
-      "Auto Test",
-      "Valgrind",
-      "UML Tools",
-      "Linux",
-      "IPC",
-    ],
+    skills: ["C++", "SQL", "WPF (MVVM)", "JIRA", "Auto Test", "Valgrind", "UML Tools", "Linux", "IPC"],
     mark: "TZ",
     logo: "/HCL_image.png",
     logoAlt: "HCL logo",
   },
   {
-    period: "August 2021 - July 2022",
+    period: "Aug 2021 - Jul 2022",
     role: "Software Developer",
     company: "Xerox - FreeFlow Core",
     summary:
-      "Software Developer responsible for building and optimizing workflow automation modules within Xerox FreeFlow Core, improving print production efficiency through scripting, automation, and system enhancements.",
+      "Built and optimized workflow automation modules for Xerox FreeFlow Core to improve print production efficiency.",
     details: [
       "Built and maintained automation features for print workflow preparation and submission.",
-      "Focused on reliability, performance, and reducing manual effort in production workflows.",
+      "Improved reliability, performance, and reduced manual effort in production workflows.",
+      "Worked on scripting and system enhancements across the application flow.",
     ],
     skills: [
       "C#",
@@ -247,11 +281,34 @@ const experience: Experience[] = [
 
 const education: Education[] = [
   {
-    period: "June 2017 - May 2021",
+    period: "Jun 2017 - May 2021",
     institution: "Veltech University",
     program: "Bachelor of Technology in Computer Science and Engineering",
     logo: "/veltech_image.jpg",
     logoAlt: "Veltech University logo",
+  },
+];
+
+const contactLinks = [
+  {
+    label: "Email me",
+    href: "mailto:techie.alekhya@gmail.com?subject=Portfolio%20hello",
+    description: "Best for job leads, project questions, and quick introductions.",
+  },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/alekhya-atyam-b53a86149/",
+    description: "Connect for professional updates and hiring conversations.",
+  },
+  {
+    label: "GitHub",
+    href: "https://github.com/alekhyaatyam",
+    description: "Browse the code and the projects behind the portfolio.",
+  },
+  {
+    label: "Resume",
+    href: "/Alekhya_Resume_2026.pdf",
+    description: "Open the latest resume in a new tab.",
   },
 ];
 
@@ -261,9 +318,7 @@ export function PortfolioPage() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   useEffect(() => {
-    const sectionNodes = Array.from(
-      document.querySelectorAll<HTMLElement>("section[id]")
-    );
+    const sectionNodes = Array.from(document.querySelectorAll<HTMLElement>("section[id]"));
     const sectionObserver = new IntersectionObserver(
       (entries) => {
         const visible = entries
@@ -285,7 +340,7 @@ export function PortfolioPage() {
   }, []);
 
   useEffect(() => {
-    const roles = ["Full Stack Developer", "Software Developer"];
+    const roles = ["Full Stack Developer", "Software Developer", "Product Builder"];
     let roleIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
@@ -302,11 +357,11 @@ export function PortfolioPage() {
           timeoutId = setTimeout(() => {
             isDeleting = true;
             tick();
-          }, 2000);
+          }, 1800);
           return;
         }
 
-        timeoutId = setTimeout(tick, 90);
+        timeoutId = setTimeout(tick, 85);
         return;
       }
 
@@ -316,14 +371,14 @@ export function PortfolioPage() {
       if (charIndex === 0) {
         isDeleting = false;
         roleIndex = (roleIndex + 1) % roles.length;
-        timeoutId = setTimeout(tick, 250);
+        timeoutId = setTimeout(tick, 240);
         return;
       }
 
-      timeoutId = setTimeout(tick, 45);
+      timeoutId = setTimeout(tick, 42);
     };
 
-    timeoutId = setTimeout(tick, 500);
+    timeoutId = setTimeout(tick, 450);
 
     return () => clearTimeout(timeoutId);
   }, []);
@@ -358,7 +413,7 @@ export function PortfolioPage() {
       <header className="topbar magic-floating">
         <a className="brand-mark" href="#about">
           <span className="brand-dot" />
-          Alekhya Atyam
+          Portfolio
         </a>
 
         <nav className="nav-pill" aria-label="Primary">
@@ -376,15 +431,15 @@ export function PortfolioPage() {
           })}
         </nav>
 
-        <a className="button button-ghost magic-ghost-button" href="#contact">
-          Let&apos;s talk
+        <a className="button button-ghost magic-ghost-button" href="/Alekhya_Resume_2026.pdf" target="_blank" rel="noopener noreferrer">
+          Resume
         </a>
       </header>
 
       <section className="hero section" id="about">
         <div className="hero-shell magic-card magic-border-beam">
-            <Meteors
-            number={26}
+          <Meteors
+            number={20}
             minDelay={0.4}
             maxDelay={2.8}
             minDuration={4}
@@ -392,8 +447,8 @@ export function PortfolioPage() {
             angle={215}
             className="hero-meteors"
           />
+
           <div className="hero-copy">
-            {/* <p className="eyebrow">Welcome</p> */}
             <p className="hero-greeting">Hello, I&apos;m</p>
             <h2 className="hero-greeting">Alekhya Atyam</h2>
             <h2 className="hero-role">
@@ -404,15 +459,19 @@ export function PortfolioPage() {
               </span>
             </h2>
             <p className="hero-text">
-              As a driven professional, I am fueled by a deep-seated passion for
-              continuous learning and the art of problem-solving. I embrace each
-              new challenge with unwavering optimism and a mindset focused on
-              growth, consistently aiming to deliver outcomes of the utmost
-              quality. With a proactive approach, I actively pursue
-              opportunities where I can apply my skills and knowledge, aspiring
-              to make a meaningful impact in the ever-evolving landscape of
-              technology while maintaining a steadfast dedication to excellence.
+              I build polished web applications, backend features, and responsive interfaces
+              across Next.js, Laravel, C#, C++, and PostgreSQL. I enjoy turning ambiguous
+              requirements into clean systems that feel calm to use and easy to maintain.
             </p>
+
+            <div className="hero-chip-row">
+              {capabilities.map((item) => (
+                <span className="chip" key={item}>
+                  {item}
+                </span>
+              ))}
+            </div>
+
             <div className="hero-actions">
               <a
                 className="button button-primary hero-resume magic-shimmer-button"
@@ -420,11 +479,27 @@ export function PortfolioPage() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                My Resume
+                View Resume
               </a>
-              {/* <a className="button button-secondary" href="#about">
-                About me
-              </a> */}
+              <a className="button button-secondary" href="#projects">
+                View Projects
+              </a>
+              <a
+                className="button button-secondary"
+                href="https://github.com/alekhyaatyam"
+                target="_blank"
+                rel="noreferrer"
+              >
+                GitHub
+              </a>
+              <a
+                className="button button-secondary"
+                href="https://www.linkedin.com/in/alekhya-atyam-b53a86149/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                LinkedIn
+              </a>
             </div>
           </div>
 
@@ -440,104 +515,66 @@ export function PortfolioPage() {
                 priority
               />
             </div>
-            {/* <div className="hero-card-footer hero-card-footer-home">
-              <p>
-                Full stack development with curiosity, consistency, and craft.
-              </p>
-              <a href="mailto:techie.alekhya@gmail.com">
-                techie.alekhya@gmail.com
-              </a>
-            </div> */}
+
+            <div className="hero-card-footer hero-card-footer-home">
+              <p>Product-focused full stack work with a clean, premium presentation.</p>
+              <a href="mailto:techie.alekhya@gmail.com">techie.alekhya@gmail.com</a>
+            </div>
           </div>
         </div>
       </section>
 
       <section className="section section-grid" id="skills">
-        {/* <div className="section-heading" data-reveal="">
-          <p className="eyebrow">About</p>
-          <h2>A calm, premium layout with space to breathe.</h2>
-        </div> */}
-
-        {/* <div className="about-panel" data-reveal="">
-          <p>
-            I help founders and teams turn ambitious ideas into polished digital
-            products. My process balances brand sensitivity, strong interface
-            systems, and the kind of detail that makes a site feel memorable.
-          </p>
-          <p>
-            This build follows a similar rhythm to the reference: spacious hero,
-            anchored navigation, modular sections, confident typography, and
-            motion that supports the story instead of overpowering it.
-          </p>
-        </div>
-
-        <div className="metrics-row" data-reveal="">
-          {metrics.map((metric) => (
-            <article className="metric-card" key={metric.label}>
-              <strong>{metric.value}</strong>
-              <span>{metric.label}</span>
-            </article>
-          ))}
-        </div> */}
-
         <div className="skills-panel magic-card magic-border-beam">
           <div className="skills-header">
-            <h3 className="eyebrow">Skills</h3>
+            <p className="eyebrow">Skills</p>
+            <p className="hero-text hero-text-center">
+              The stack is broad, but the through-line is the same: build things that are
+              reliable, readable, and ready to show in public.
+            </p>
           </div>
 
           <div className="skills-grid">
-              {skillGroups.map((group) => (
-                <article
-                  className={`skill-group magic-card skill-group-${group.title
-                    .toLowerCase()
-                    .replace(/[^a-z]+/g, "-")}`}
-                  key={group.title}
-                >
-                  <h4>{group.title}</h4>
-                  <div className="skill-pill-grid">
-                    {group.items.map((item) => (
-                      <div className="skill-icon-card magic-micro-card" key={item.name}>
-                        <div className="skill-icon-wrap">
-                          <img
-                            className="skill-icon"
-                            src={item.icon}
-                            alt={item.alt ?? `${item.name} icon`}
-                            loading="lazy"
-                          />
-                        </div>
-                        <span className="skill-label">{item.name}</span>
+            {skillGroups.map((group) => (
+              <article
+                className={`skill-group magic-card skill-group-${group.title
+                  .toLowerCase()
+                  .replace(/[^a-z]+/g, "-")}`}
+                key={group.title}
+              >
+                <h4>{group.title}</h4>
+                <div className="skill-pill-grid">
+                  {group.items.map((item) => (
+                    <div className="skill-icon-card magic-micro-card" key={item.name}>
+                      <div className="skill-icon-wrap">
+                        <img
+                          className="skill-icon"
+                          src={item.icon}
+                          alt={item.alt ?? `${item.name} icon`}
+                          loading="lazy"
+                        />
                       </div>
+                      <span className="skill-label">{item.name}</span>
+                    </div>
                   ))}
                 </div>
               </article>
             ))}
           </div>
         </div>
-
-        {/* <div className="capability-panel" data-reveal="">
-          <p className="eyebrow">Capabilities</p>
-          <div className="chip-row">
-            {capabilities.map((capability) => (
-              <span className="chip" key={capability}>
-                {capability}
-              </span>
-            ))}
-          </div>
-        </div> */}
       </section>
 
       <section className="section experience-section" id="experience">
         <div className="skills-header">
-          <h3 className="eyebrow">Experience</h3>
-          {/* <h2>Experience</h2> */}
+          <p className="eyebrow">Experience</p>
+          <p className="hero-text hero-text-center">
+            A timeline of production work across web, desktop, automation, and product delivery.
+          </p>
         </div>
 
         <div className="experience-timeline">
           {experience.map((item) => (
-            <article
-              className="experience-card"
-              key={`${item.company}-${item.period}`}
-            >
+            <article className="experience-card" key={`${item.company}-${item.period}`}>
               <div className="experience-rail" aria-hidden="true">
                 <span className="experience-dot" />
                 <span className="experience-line" />
@@ -546,11 +583,7 @@ export function PortfolioPage() {
                 <div className="experience-head">
                   <div className="experience-mark">
                     {item.logo ? (
-                      <img
-                        className="experience-logo"
-                        src={item.logo}
-                        alt={item.logoAlt ?? `${item.company} logo`}
-                      />
+                      <img className="experience-logo" src={item.logo} alt={item.logoAlt ?? `${item.company} logo`} />
                     ) : (
                       item.mark
                     )}
@@ -561,14 +594,17 @@ export function PortfolioPage() {
                     <span className="experience-period">{item.period}</span>
                   </div>
                 </div>
+
                 <p className="experience-summary">{item.summary}</p>
-                {/* <div className="experience-copy">
+
+                <ul className="experience-copy experience-list">
                   {item.details.map((detail) => (
-                    <p key={detail}>{detail}</p>
+                    <li key={detail}>{detail}</li>
                   ))}
-                </div> */}
+                </ul>
+
                 <p className="experience-skills">
-                  <strong>Skills:</strong> {item.skills.join(" • ")}
+                  <strong>Skills:</strong> {item.skills.join(" / ")}
                 </p>
               </div>
             </article>
@@ -578,7 +614,11 @@ export function PortfolioPage() {
 
       <section className="section projects-section" id="projects">
         <div className="skills-header">
-          <h3 className="eyebrow">Projects</h3>
+          <p className="eyebrow">Projects</p>
+          <p className="hero-text hero-text-center">
+            Selected work presented as compact case-study cards so it is easy to share, scan,
+            and open on social media.
+          </p>
         </div>
 
         <div className="projects-grid">
@@ -589,6 +629,14 @@ export function PortfolioPage() {
               key={project.title}
               onClick={() => setSelectedProject(project)}
             >
+              <div className={`project-visual accent-${project.accent}`}>
+                <div className="project-screen">
+                  <span className="project-screen-label">{project.role}</span>
+                  <strong>{project.previewLabel}</strong>
+                  <span>{project.previewDetail}</span>
+                </div>
+              </div>
+
               <div className="project-tags">
                 {project.tech.map((item) => (
                   <span className="project-tag" key={item}>
@@ -602,6 +650,8 @@ export function PortfolioPage() {
                 <p className="project-period">{project.period}</p>
                 <p>{project.summary}</p>
               </div>
+
+              <span className="project-tile-action">Open case study</span>
             </button>
           ))}
         </div>
@@ -609,22 +659,15 @@ export function PortfolioPage() {
 
       <section className="section education-section" id="education">
         <div className="skills-header">
-          <h3 className="eyebrow">Education</h3>
+          <p className="eyebrow">Education</p>
         </div>
 
         <div className="education-timeline">
           {education.map((item) => (
-            <article
-              className="education-card"
-              key={`${item.institution}-${item.period}`}
-            >
+            <article className="education-card" key={`${item.institution}-${item.period}`}>
               <div className="education-panel magic-card">
                 <div className="education-mark">
-                  <img
-                    className="education-logo"
-                    src={item.logo}
-                    alt={item.logoAlt}
-                  />
+                  <img className="education-logo" src={item.logo} alt={item.logoAlt} />
                 </div>
                 <div className="education-copy">
                   <h3>{item.institution}</h3>
@@ -632,10 +675,6 @@ export function PortfolioPage() {
                   <span className="education-period">{item.period}</span>
                 </div>
               </div>
-              {/* <div className="education-rail" aria-hidden="true">
-                <span className="education-dot" />
-                <span className="education-line" />
-              </div> */}
             </article>
           ))}
         </div>
@@ -643,52 +682,28 @@ export function PortfolioPage() {
 
       <section className="section contact-band" id="contact">
         <div className="skills-header">
-          <h3 className="eyebrow">CONTACT</h3>
-          <p className="contact-intro">Let&apos;s connect!</p>
+          <p className="eyebrow contact-eyebrow">Contact</p>
+          <p className="contact-intro">Let&apos;s connect.</p>
+          <p className="hero-text hero-text-center">
+            If you are hiring, collaborating, or just want to talk about shipping polished
+            products, these are the fastest ways to reach me.
+          </p>
         </div>
 
-        <form
-          className="contact-form-shell magic-card magic-border-beam"
-          action="mailto:techie.alekhya@gmail.com"
-          method="post"
-          encType="text/plain"
-        >
-          <div className="contact-form-title-row">
-            <h3>Email Me</h3>
-            {/* <span className="contact-form-kicker">Send a message</span> */}
-          </div>
-
-          <div className="contact-form-grid">
-            <label className="contact-field">
-              <span className="sr-only">Your Email</span>
-              <input type="email" name="email" placeholder="Your Email" required />
-            </label>
-
-            <label className="contact-field">
-              <span className="sr-only">Your Name</span>
-              <input type="text" name="name" placeholder="Your Name" required />
-            </label>
-
-            <label className="contact-field">
-              <span className="sr-only">Subject</span>
-              <input type="text" name="subject" placeholder="Subject" required />
-            </label>
-
-            <label className="contact-field contact-field-message">
-              <span className="sr-only">Message</span>
-              <textarea
-                name="message"
-                placeholder="Message"
-                rows={7}
-                required
-              />
-            </label>
-          </div>
-
-          <button className="contact-submit magic-shimmer-button" type="submit">
-            Send
-          </button>
-        </form>
+        <div className="contact-links">
+          {contactLinks.map((link) => (
+            <a
+              key={link.label}
+              className="contact-link-card magic-card"
+              href={link.href}
+              target={link.href.startsWith("http") ? "_blank" : undefined}
+              rel={link.href.startsWith("http") ? "noreferrer" : undefined}
+            >
+              <strong>{link.label}</strong>
+              <span>{link.description}</span>
+            </a>
+          ))}
+        </div>
       </section>
 
       <footer className="footer-bar">
@@ -710,11 +725,7 @@ export function PortfolioPage() {
             rel="noreferrer"
             aria-label="Open LinkedIn profile"
           >
-            <img
-              className="footer-social-icon"
-              src="https://skillicons.dev/icons?i=linkedin"
-              alt="LinkedIn"
-            />
+            <img className="footer-social-icon" src="https://skillicons.dev/icons?i=linkedin" alt="LinkedIn" />
           </a>
           <a
             className="footer-social"
@@ -723,11 +734,7 @@ export function PortfolioPage() {
             rel="noreferrer"
             aria-label="Open GitHub profile"
           >
-            <img
-              className="footer-social-icon"
-              src="https://skillicons.dev/icons?i=github"
-              alt="GitHub"
-            />
+            <img className="footer-social-icon" src="https://skillicons.dev/icons?i=github" alt="GitHub" />
           </a>
         </div>
       </footer>
@@ -757,6 +764,8 @@ export function PortfolioPage() {
             <h2 id="project-modal-title">{selectedProject.title}</h2>
             <p className="project-modal-period">{selectedProject.period}</p>
 
+            <p className="project-modal-role">{selectedProject.role}</p>
+
             <div className="project-tags project-tags-modal">
               {selectedProject.tech.map((item) => (
                 <span className="project-tag" key={item}>
@@ -765,9 +774,13 @@ export function PortfolioPage() {
               ))}
             </div>
 
-            <p className="project-modal-description">
-              {selectedProject.description}
-            </p>
+            <p className="project-modal-description">{selectedProject.description}</p>
+
+            <ul className="project-highlights project-highlights-modal">
+              {selectedProject.highlights.map((highlight) => (
+                <li key={highlight}>{highlight}</li>
+              ))}
+            </ul>
 
             <div className="project-modal-actions">
               <a
