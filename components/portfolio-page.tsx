@@ -259,6 +259,8 @@ const experience: Experience[] = [
       "GitHub",
       "Docker",
       "PHP",
+      "JavaScript",
+      "TypeScript",
       "Tailwind CSS",
       "SEO",
       "CMS",
