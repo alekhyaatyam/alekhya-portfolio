@@ -122,6 +122,34 @@ const skillGroups: { title: string; items: SkillItem[] }[] = [
 
 const projects: Project[] = [
   {
+    title: "Northstar CRM",
+    period: "2026",
+    summary:
+      "A CRM-focused web application for managing customer records, sales workflows, and relationship tracking in one organized interface.",
+    description:
+      "Built a customer relationship management project centered on clear data organization, practical workflow management, and an interface that makes customer information easy to scan and maintain. The project is structured to support core CRM actions such as tracking contacts, reviewing account details, and keeping sales or service activity visible.",
+    tech: [
+      "Laravel 13",
+      "Laravel Breeze",
+      "Inertia.js v2",
+      "Vue 3",
+      "Tailwind CSS v4",
+      "Vite",
+      "Lucide Vue",
+      "SQLite",
+    ],
+    accent: "mint",
+    codeUrl: "https://github.com/alekhyaatyam/northstar-crm",
+    role: "CRM application development",
+    previewLabel: "Customer workspace",
+    previewDetail: "Centralized CRM flow for contacts, accounts, and activity.",
+    highlights: [
+      "Designed around organized customer and account management.",
+      "Supports a practical CRM workflow for tracking relationship activity.",
+      "Added as a featured GitHub project with the same case-study treatment.",
+    ],
+  },
+  {
     title: "Payhub Portal",
     period: "Mar 2026",
     summary:
