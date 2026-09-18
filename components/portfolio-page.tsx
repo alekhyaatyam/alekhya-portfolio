@@ -70,6 +70,7 @@ const skillGroups: { title: string; items: SkillItem[] }[] = [
       { name: "HTML", icon: "https://skillicons.dev/icons?i=html" },
       { name: "CSS", icon: "https://skillicons.dev/icons?i=css" },
       { name: "JavaScript", icon: "https://skillicons.dev/icons?i=js" },
+      { name: "React", icon: "https://skillicons.dev/icons?i=react" },
       { name: "TypeScript", icon: "https://skillicons.dev/icons?i=ts" },
       { name: "Next.js", icon: "https://skillicons.dev/icons?i=nextjs" },
       { name: "Tailwind CSS", icon: "https://skillicons.dev/icons?i=tailwind" },
@@ -241,7 +242,7 @@ const projects: Project[] = [
 const experience: Experience[] = [
   {
     period: "Apr 2026 - Present",
-    role: "Web Developer",
+    role: "Software Developer",
     company: "Payraydoo",
     summary:
       "Contributing to the Payraydoo platform by building new user-facing pages, improving backend functionality, and coordinating database updates.",
@@ -266,6 +267,40 @@ const experience: Experience[] = [
       "CMS",
     ],
     mark: "P",
+    logo: "/payraydoo.png",
+    logoAlt: "Payraydoo logo",
+  },
+  {
+    period: "Oct 2025 - Mar 2026",
+    role: "Web Developer",
+    company: "Design Diagnosis | London, England",
+    summary:
+      "Built and maintained bespoke Laravel/PHP applications and dynamic websites for client-facing digital experiences.",
+    details: [
+      "Turned design mockups into responsive, accessible interfaces across desktop and mobile.",
+      "Developed interactive website improvements and content-management features that reduced reliance on developer support.",
+      "Resolved cross-browser and mobile issues while improving page-load performance through optimisation and caching.",
+    ],
+    skills: ["Laravel", "PHP", "MySQL", "HTML", "CSS", "JavaScript", "CMS", "Performance Optimisation"],
+    mark: "DD",
+    logo: "/design_diagnosis.jpg",
+    logoAlt: "Design Diagnosis logo",
+  },
+  {
+    period: "Apr 2025 - Sep 2025",
+    role: "Software Developer",
+    company: "HAS Utility Ltd | London, England",
+    summary:
+      "Developed and enhanced a bespoke full-stack CRM and internal business system for operational teams.",
+    details: [
+      "Built dashboards and workflow features for onboarding, lead management, supplier engagement, contracts, and reporting.",
+      "Developed REST APIs and third-party integrations to synchronise lead data and automate business workflows.",
+      "Implemented authentication, permissions, role-based workflows, and secure database changes for customer and contract data.",
+    ],
+    skills: ["React", "TypeScript", "Vite", "Laravel", "PHP", "MySQL", "REST APIs", "Git", "JIRA"],
+    mark: "HAS",
+    logo: "/has_utility_ltd.jpg",
+    logoAlt: "HAS Utility Ltd logo",
   },
   {
     period: "Aug 2022 - Jan 2026",
@@ -337,7 +372,7 @@ const contactLinks = [
   },
   {
     label: "Resume",
-    href: "/Alekhya_Resume_2026.pdf",
+    href: "/Alekhya_Atyam_Resume.pdf",
     description: "Open the latest resume in a new tab.",
   },
 ];
@@ -461,7 +496,7 @@ export function PortfolioPage() {
           })}
         </nav>
 
-        <a className="button button-ghost magic-ghost-button" href="/Alekhya_Resume_2026.pdf" target="_blank" rel="noopener noreferrer">
+        <a className="button button-ghost magic-ghost-button" href="/Alekhya_Atyam_Resume.pdf" target="_blank" rel="noopener noreferrer">
           Resume
         </a>
       </header>
@@ -505,7 +540,7 @@ export function PortfolioPage() {
             <div className="hero-actions">
               <a
                 className="button button-primary hero-resume magic-shimmer-button"
-                href="/Alekhya_Resume_2026.pdf"
+                href="/Alekhya_Atyam_Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -611,7 +646,7 @@ export function PortfolioPage() {
               </div>
               <div className="experience-panel magic-card">
                 <div className="experience-head">
-                  <div className="experience-mark">
+                  <div className={`experience-mark${item.logo ? " experience-mark-logo" : ""}`}>
                     {item.logo ? (
                       <img className="experience-logo" src={item.logo} alt={item.logoAlt ?? `${item.company} logo`} />
                     ) : (
