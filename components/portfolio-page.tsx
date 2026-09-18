@@ -51,8 +51,8 @@ const navigation = [
 const capabilities = [
   "Frontend systems",
   "Backend features",
-  "Database work",
-  "Desktop apps",
+  "Database systems",
+  "Desktop applications",
   "Performance",
   "Delivery",
 ];
@@ -524,9 +524,7 @@ export function PortfolioPage() {
               </span>
             </h2>
             <p className="hero-text">
-              I build polished web applications, backend features, and responsive interfaces
-              across Next.js, Laravel, C#, C++, and PostgreSQL. I enjoy turning ambiguous
-              requirements into clean systems that feel calm to use and easy to maintain.
+              Full-stack developer specializing in React, Next.js, Laravel, C#, C++, and PostgreSQL. I turn ambiguous requirements into clean, maintainable systems — and ship polished cross-platform software that holds up in production.
             </p>
 
             <div className="hero-chip-row">
